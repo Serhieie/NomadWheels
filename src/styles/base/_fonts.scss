@@ -1,0 +1,16 @@
+@use '../utils/variables' as var;
+
+$fonts: var.$font-weights;
+
+@each $key, $value in $fonts {
+  @font-face {
+    font-family: 'Inter';
+    @debug 'Font weight: #{$key}, Value: #{$value}';
+    src: url('../assets/fonts/Inter-#{$key}.woff2') format('woff2'),
+      url('../assets/fonts/Inter-#{$key}.woff') format('woff'),
+      url('../assets/fonts/Inter-#{$key}.ttf') format('truetype');
+    font-weight: $value;
+    font-style: normal;
+    font-display: swap;
+  }
+}

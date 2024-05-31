@@ -1,0 +1,56 @@
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+@use '../utils/placeholders';
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  @extend %main-text;
+
+  font-family: var.$main-font, sans-serif;
+  color: fn.get-color('dark-primary');
+  background-color: fn.get-color('light');
+}
+
+h1 {
+  background-color: black;
+  color: white;
+}
+
+ol,
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+button {
+  font-family: inherit;
+  color: fn.get-color('accent-primary');
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none;
+}
