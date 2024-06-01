@@ -1,0 +1,35 @@
+@use '../../../styles/utils/placeholders';
+@use '../../../styles/utils/variables' as var;
+@use '../../../styles/utils/functions' as fn;
+@use '../../../styles/utils/mixins' as mx;
+
+.spacer {
+  position: relative;
+  width: 100dvw;
+  height: 78dvh;
+  overflow: hidden;
+  background-color: fn.get-color('light-primary');
+}
+
+.spacer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background-image: url('../../../assets/images/camper1.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+}
+
+.window {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: fn.get-color('light');
+}

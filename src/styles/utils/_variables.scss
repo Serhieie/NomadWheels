@@ -14,8 +14,12 @@ $colors: (
   'dark': #000,
   'dark-primary': #101828,
   'dark-secondary': #475467,
+  'dark-secondary-opacity': rgba(16, 24, 40, 0.6),
   'dark-tertiary': #292932,
+  'shadow-color': rgba(0, 0, 0, 0.2),
+  'border-color': rgba(16, 24, 40, 0.2),
   'accent-primary': #e44848,
+  'accent-primary-hover': #d84343,
   'rating': #ffc531,
   'danger': #d11c1c,
   'success': #00de46,
@@ -44,7 +48,7 @@ $main-font: 'Inter';
 $font-weights: (
   'Regular': 400,
   'Medium': 500,
-  'Semibold': 600,
+  'SemiBold': 600,
 );
 
 $font-sizes: (

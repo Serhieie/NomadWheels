@@ -1,0 +1,82 @@
+@use '../../../../styles/utils/placeholders';
+@use '../../../../styles/utils/variables' as var;
+@use '../../../../styles/utils/functions' as fn;
+@use '../../../../styles/utils/mixins' as mx;
+
+.listItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  padding: 80px 24px 12px;
+
+  background-color: fn.get-color('light-primary');
+
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  max-height: 76%;
+  text-align: center;
+
+  @include mx.border(10px);
+
+  &:nth-of-type(2) .itemIcon svg,
+  &:nth-of-type(4) .itemIcon svg {
+    fill: transparent;
+  }
+  &:nth-of-type(3) .itemIcon svg,
+  &:nth-of-type(5) .itemIcon svg {
+    stroke: transparent;
+    fill: fn.get-color('light-primary');
+  }
+
+  &:last-child {
+    @include mx.mq('xs') {
+      display: none;
+    }
+    @include mx.mq('lg') {
+      display: flex;
+    }
+  }
+}
+
+.itemIcon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border: 8px solid fn.get-color('light-primary');
+  background-color: fn.get-color('accent-primary');
+  @include mx.frame(100px, 'true');
+  svg {
+    stroke: fn.get-color('light-primary');
+    fill: fn.get-color('light-primary');
+  }
+}
+
+.itemHead {
+  height: 24%;
+}
+
+.itemTitle {
+  font-family: 'Oswald', sans-serif;
+  color: fn.get-color('dark-secondary');
+  font-size: 26px;
+}
+
+.itemTitle {
+  @extend %details-accent;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  color: fn.get-color('dark-secondary-opacity');
+  justify-self: space-between;
+  gap: 20px;
+}

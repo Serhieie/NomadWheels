@@ -9,7 +9,7 @@ import '../styles/main.scss';
 // const Reviews = lazy(() => import('./Reviews/Reviews'));
 const InfoPage = lazy(() => import('../pages/InfoPage'));
 const CatalogPage = lazy(() => import('../pages/CatalogPage'));
-const WelcomePage = lazy(() => import('../pages/WelcomePage'));
+const HomePage = lazy(() => import('../pages/HomePage'));
 
 function App() {
   useEffect(() => {
@@ -19,9 +19,9 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<WelcomePage />} />
-        <Route path="/movies" element={<CatalogPage />} />
-        <Route path="/movies/:movieId" element={<InfoPage />} />
+        <Route index element={<HomePage />} />
+        <Route path="/Catalog" element={<CatalogPage />} />
+        <Route path="/Favorite" element={<InfoPage />} />
         <Route path="*" element={<div>Not Found ...</div>} />
       </Route>
     </Routes>

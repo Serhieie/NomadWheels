@@ -1,0 +1,57 @@
+@use '../../styles/utils/placeholders';
+@use '../../styles/utils/variables' as var;
+@use '../../styles/utils/functions' as fn;
+@use '../../styles/utils/mixins' as mx;
+
+.formWrapper {
+  @extend %section-frame;
+  @include mx.border;
+
+  width: 448px;
+  height: 532px;
+}
+
+.rentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .infoWrapper {
+    width: 258px;
+    p {
+      margin-top: 4px;
+      color: fn.get-color('dark-secondary');
+    }
+  }
+}
+
+.inputsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  label {
+    display: flex;
+    flex-direction: column;
+
+    input,
+    textarea {
+      @extend %inputs-text;
+
+      color: fn.get-color('dark-secondary');
+      background-color: fn.get-color('light-secondary');
+
+      padding: 18px;
+      border-radius: 10px;
+
+      &::placeholder {
+        opacity: 0.8;
+      }
+    }
+
+    textarea {
+      resize: none;
+      height: 114px;
+    }
+  }
+}

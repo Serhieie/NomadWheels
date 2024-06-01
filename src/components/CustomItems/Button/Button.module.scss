@@ -1,0 +1,31 @@
+@use '../../../styles/utils/placeholders';
+@use '../../../styles/utils/variables' as var;
+@use '../../../styles/utils/functions' as fn;
+@use '../../../styles/utils/mixins' as mx;
+
+.button {
+  @extend %accent-text;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: fn.get-color('accent-primary');
+  color: fn.get-color('light');
+
+  height: 56px;
+  max-width: 172px;
+  min-width: 155px;
+  padding: 16px 40px;
+  border-radius: 50px;
+
+  @include mx.ease('fast', background-color);
+
+  &:hover {
+    background-color: fn.get-color('accent-primary-hover');
+  }
+}
+
+.notAccentBtn {
+  padding: 16px 32px;
+}

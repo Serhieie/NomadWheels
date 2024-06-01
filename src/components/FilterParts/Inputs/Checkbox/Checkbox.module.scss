@@ -1,0 +1,42 @@
+@use '../../../styles/utils/placeholders';
+@use '../../../styles/utils/variables' as var;
+@use '../../../styles/utils/functions' as fn;
+@use '../../../styles/utils/mixins' as mx;
+
+.checkbox {
+  @extend %hidden;
+
+  &:checked + label {
+    border: 1px solid fn.get-color('accent-primary');
+  }
+}
+
+.label {
+  @extend %accent-text;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+
+  background-color: fn.get-color('light');
+  color: fn.get-color('dark-primary');
+
+  height: 95px;
+  padding: 10px;
+  max-width: 112px;
+  border-radius: 50px;
+
+  @include mx.border();
+
+  svg {
+    fill: fn.get-color('dark-primary');
+  }
+}
+
+.notAccentBtn {
+  padding: 16px 32px;
+}

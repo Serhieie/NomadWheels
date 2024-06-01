@@ -12,7 +12,7 @@ export default defineConfig({
       assets: '/src/assets',
     },
   },
-  base: '/NomadWheels/',
+  base: '/NomadWheels',
   build: {
     outDir: 'dist',
     assetsDir: '.',

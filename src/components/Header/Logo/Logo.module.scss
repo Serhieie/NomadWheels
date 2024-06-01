@@ -1,0 +1,47 @@
+@use '../../../styles/utils/placeholders';
+@use '../../../styles/utils/variables' as var;
+@use '../../../styles/utils/functions' as fn;
+@use '../../../styles/utils/mixins' as mx;
+
+.logoWrapper {
+  position: relative;
+}
+
+.logo {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  text-align: end;
+  font-size: 36px;
+  width: 100px;
+  border-radius: 50px;
+  padding: 2px 12px;
+  user-select: none;
+}
+
+.logoDot {
+  position: absolute;
+  left: 10px;
+  top: 52%;
+  transform: translateY(-50%);
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  height: 28px;
+  width: 26px;
+}
+
+.whiteLogo {
+  background-color: fn.get-color('light-primary');
+  color: fn.get-color('accent-primary');
+}
+.whiteDot {
+  background-color: fn.get-color('accent-primary');
+}
+
+.redLogo {
+  background-color: fn.get-color('accent-primary');
+  color: fn.get-color('light-primary');
+}
+
+.redDot {
+  background-color: fn.get-color('light-primary');
+}

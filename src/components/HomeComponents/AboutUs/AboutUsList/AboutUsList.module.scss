@@ -1,0 +1,16 @@
+@use '../../../../styles/utils/placeholders';
+@use '../../../../styles/utils/variables' as var;
+@use '../../../../styles/utils/functions' as fn;
+@use '../../../../styles/utils/mixins' as mx;
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  height: 640px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20 0px;
+}

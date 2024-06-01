@@ -1,0 +1,42 @@
+@use '../../styles/utils/placeholders';
+@use '../../styles/utils/variables' as var;
+@use '../../styles/utils/functions' as fn;
+@use '../../styles/utils/mixins' as mx;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 30px;
+
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  padding: 0 64px;
+  background-color: fn.get-color('accent-primary');
+}
+
+.footerText {
+  font-family: 'Oswald', sans-serif;
+  font-size: 100px;
+  color: fn.get-color('light-primary');
+  text-align: center;
+  line-height: 1.1;
+  padding: 0;
+  margin: 0;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: calc(200% - 300px);
+    bottom: 46%;
+    transform: translateY(50%);
+    width: 600px;
+    height: 60px;
+    background: linear-gradient(to right, #e44848 10%, #f2f4f7 60%);
+
+    border-radius: 10px;
+  }
+}

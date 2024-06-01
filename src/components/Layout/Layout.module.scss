@@ -1,0 +1,14 @@
+@use '../../styles/utils/placeholders';
+@use '../../styles/utils/variables' as var;
+@use '../../styles/utils/functions' as fn;
+@use '../../styles/utils/mixins' as mx;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}

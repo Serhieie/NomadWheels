@@ -5,7 +5,6 @@ $fonts: var.$font-weights;
 @each $key, $value in $fonts {
   @font-face {
     font-family: 'Inter';
-    @debug 'Font weight: #{$key}, Value: #{$value}';
     src: url('../assets/fonts/Inter-#{$key}.woff2') format('woff2'),
       url('../assets/fonts/Inter-#{$key}.woff') format('woff'),
       url('../assets/fonts/Inter-#{$key}.ttf') format('truetype');
@@ -13,4 +12,12 @@ $fonts: var.$font-weights;
     font-style: normal;
     font-display: swap;
   }
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('../assets/fonts/Oswald-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }

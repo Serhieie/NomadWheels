@@ -1,0 +1,23 @@
+@use '../../../styles/utils/placeholders';
+@use '../../../styles/utils/variables' as var;
+@use '../../../styles/utils/functions' as fn;
+@use '../../../styles/utils/mixins' as mx;
+
+.section {
+  position: relative;
+  width: 100%;
+  padding: 12px 0px;
+  border-top: 4px solid fn.get-color('accent-primary');
+  background-color: fn.get-color('shadow-color');
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+    border-radius: inherit;
+  }
+}
