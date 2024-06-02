@@ -1,7 +1,7 @@
-@use '../../../../styles/utils/placeholders';
-@use '../../../../styles/utils/variables' as var;
-@use '../../../../styles/utils/functions' as fn;
-@use '../../../../styles/utils/mixins' as mx;
+@use '../../../../../styles/utils/placeholders';
+@use '../../../../../styles/utils/variables' as var;
+@use '../../../../../styles/utils/functions' as fn;
+@use '../../../../../styles/utils/mixins' as mx;
 
 .label {
   @extend %accent-text;
@@ -20,7 +20,7 @@
   border-radius: 50px;
 
   svg {
-    fill: fn.get-color('dark-primary');
-    stroke: transparent;
+    stroke: fn.get-color('dark-primary');
+    fill: transparent;
   }
 }

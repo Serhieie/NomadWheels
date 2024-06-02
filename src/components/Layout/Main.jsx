@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
+import { Loader } from '../Loader/Loader';
 import { ToastContainer } from 'react-toastify';
 
 export const Main = () => {
@@ -17,7 +18,7 @@ export const Main = () => {
         pauseOnHover
         theme="colored"
       />
-      <Suspense fallback={null}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </main>

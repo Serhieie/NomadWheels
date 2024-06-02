@@ -1,11 +1,9 @@
-import { CamperList } from '../components/CamperList/CamperList';
-import { FilterParts } from '../components/FilterParts/FilterParts';
+import { Catalog } from '../components/Catalog/Catalog';
 
 function CatalogPage() {
   return (
     <>
-      <FilterParts />
-      <CamperList />
+      <Catalog />
     </>
   );
 }

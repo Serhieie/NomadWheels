@@ -1,0 +1,42 @@
+@use '../../../../styles/utils/placeholders';
+@use '../../../../styles/utils/variables' as var;
+@use '../../../../styles/utils/functions' as fn;
+@use '../../../../styles/utils/mixins' as mx;
+
+.camperListItem {
+  padding: 24px;
+  overflow: hidden;
+  @include mx.border(20px);
+}
+.cardWrapper {
+  display: flex;
+  gap: 24px;
+}
+.frame {
+  flex-shrink: 0;
+  @include mx.frame(290px, false, 10px, 310px);
+}
+.camperListItem_img {
+  width: 100%;
+  height: 100%;
+}
+
+.camperListItem_info {
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  min-width: 310px;
+}
+
+.description {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  color: fn.get-color('dark-secondary');
+}

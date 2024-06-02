@@ -5,21 +5,26 @@
 
 .button {
   @extend %accent-text;
+  position: relative;
+  overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: fn.get-color('accent-primary');
   color: fn.get-color('light');
 
   height: 56px;
   max-width: 172px;
   min-width: 155px;
-  padding: 16px 40px;
   border-radius: 50px;
 
   @include mx.ease('fast', background-color);
+}
+
+.accentBtn {
+  padding: 16px 40px;
+  background-color: fn.get-color('accent-primary');
 
   &:hover {
     background-color: fn.get-color('accent-primary-hover');
@@ -28,4 +33,13 @@
 
 .notAccentBtn {
   padding: 16px 32px;
+  background-color: fn.get-color('transparent');
+  color: fn.get-color('dark-primary');
+  margin: 0 auto;
+  @include mx.border(100px);
+  @include mx.ease('fast');
+  &:hover {
+    border-color: fn.get-color('accent-primary');
+    color: fn.get-color('dark-secondary');
+  }
 }

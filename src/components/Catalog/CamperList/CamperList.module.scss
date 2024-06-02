@@ -3,6 +3,18 @@
 @use '../../../styles/utils/functions' as fn;
 @use '../../../styles/utils/mixins' as mx;
 
+.camperListWrapper {
+  grid-area: list;
+  display: flex;
+  flex-direction: column;
+}
+
 .camperList {
-  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+
+  gap: 32px;
+
+  min-height: 100dvh;
 }

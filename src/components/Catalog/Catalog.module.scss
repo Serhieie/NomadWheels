@@ -1,0 +1,15 @@
+@use '../../styles/utils/placeholders';
+@use '../../styles/utils/variables' as var;
+@use '../../styles/utils/functions' as fn;
+@use '../../styles/utils/mixins' as mx;
+
+.catalog {
+  padding: 40px 64px;
+  display: grid;
+  gap: 64px;
+  grid-template-columns: 360px 1fr 1fr;
+  grid-template-areas:
+    'filter  list list '
+    'filter  list list '
+    '   .    list list';
+}

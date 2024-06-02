@@ -1,1 +1,9 @@
-export const initialState = {};
+export const initialState = {
+  campers: [],
+  favorites: [],
+  page: 1,
+  activeCamper: {},
+  loading: false,
+  noItems: false,
+  error: null,
+};

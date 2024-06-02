@@ -8,9 +8,7 @@ export const Navigation = () => {
   return (
     <ul className={styles.navigationList}>
       <li>
-        <NavLink to="/">
-          <Logo />
-        </NavLink>
+        <Logo />
       </li>
       {items.map((item) => (
         <li key={nanoid()} className={styles.navigationItem}>

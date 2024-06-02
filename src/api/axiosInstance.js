@@ -13,7 +13,6 @@ export const apiCall = async (path, method = 'get', body) => {
   }
 };
 
-export const getAdverts = (page = 1, limit = 4) =>
-  apiCall(`?page=${page}&limit=${limit}`);
+export const getAdverts = (page, limit) => apiCall(`?page=${page}&limit=${limit}`);
 
 export const getAdvertById = (id) => apiCall(`${id}`);

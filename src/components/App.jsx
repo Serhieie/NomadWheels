@@ -1,5 +1,4 @@
-import { useEffect, lazy } from 'react';
-import { getAdverts } from '../api/axiosInstance';
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import 'normalize.css';
@@ -12,10 +11,6 @@ const CatalogPage = lazy(() => import('../pages/CatalogPage'));
 const HomePage = lazy(() => import('../pages/HomePage'));
 
 function App() {
-  useEffect(() => {
-    getAdverts();
-  }, []);
-
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

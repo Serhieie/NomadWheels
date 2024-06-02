@@ -1,7 +1,7 @@
-import { AboutUs } from '../HomeComponents/AboutUs/AboutUs';
-import { Hero } from '../HomeComponents/Hero/Hero';
-import { Spacer } from '../HomeComponents/Spacer/Spacer';
 import styles from './Home.module.scss';
+import { AboutUs } from './AboutUs/AboutUs';
+import { Hero } from './Hero/Hero';
+import { Spacer } from './Spacer/Spacer';
 
 export const Home = () => {
   return (

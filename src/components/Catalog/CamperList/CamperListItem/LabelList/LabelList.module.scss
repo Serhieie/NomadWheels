@@ -1,0 +1,15 @@
+@use '../../../../../styles/utils/placeholders';
+@use '../../../../../styles/utils/variables' as var;
+@use '../../../../../styles/utils/functions' as fn;
+@use '../../../../../styles/utils/mixins' as mx;
+
+.labelList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  min-height: calc(2 * 44px + 8px);
+  max-height: calc(2 * 44px + 8px);
+  overflow: hidden;
+}

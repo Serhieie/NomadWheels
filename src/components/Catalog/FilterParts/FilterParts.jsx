@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import styles from './FilterParts.module.scss';
 import { LocationInput } from './Inputs/LocationInput/LocationInput';
-import { Button } from '../CustomItems/Button';
+import { Button } from '../../CustomItems/Button';
 
 export const FilterParts = () => {
   const defaultValues = {
