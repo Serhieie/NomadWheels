@@ -6,27 +6,39 @@ export const handleRejected = (state) => {
 };
 
 export const handleFetchAdvertsFulfilled = (state, action) => {
+  const { payload } = action;
+
   if (state.filter) {
     return {
       ...state,
-      campers: action.payload,
+      campers: payload,
       filter: false,
       loading: false,
       noItems: false,
     };
   }
-  if (state.campers.length === 4 && state.page === 1) return { ...state, loading: false };
-  if (action.payload.length < 4) {
+
+  if (state.page === 1) {
     return {
       ...state,
-      campers: [...state.campers, ...action.payload],
+      campers: payload,
+      loading: false,
+      noItems: payload.length < 4,
+    };
+  }
+
+  if (payload.length < 4) {
+    return {
+      ...state,
+      campers: [...state.campers, ...payload],
       loading: false,
       noItems: true,
     };
   }
+
   return {
     ...state,
-    campers: [...state.campers, ...action.payload],
+    campers: [...state.campers, ...payload],
     loading: false,
   };
 };
@@ -45,13 +57,14 @@ export const handleAddFavorite = (state, action) => {
   const camperId = action.payload;
   const camper = state.campers.find((camp) => camp._id === camperId);
   if (camper) {
-    const index = state.favorites.findIndex((fav) => fav._id === camperId);
-    if (index !== -1) {
-      state.favorites.splice(index, 1);
-    } else {
-      state.favorites.push(camper);
-    }
+    state.favorites.findIndex((fav) => fav._id === camperId);
+    state.favorites.push(camper);
   }
+};
+
+export const handleRemoveFavorite = (state, action) => {
+  const camperId = action.payload;
+  state.favorites = state.favorites.filter((fav) => fav._id !== camperId);
 };
 
 //Filtered
@@ -64,4 +77,8 @@ export const handleFetchFilteredAdvertsFulfilled = (state, action) => {
     noItems: true,
     page: 1,
   };
+};
+
+export const handleFetchFilteredAdvertsRejected = (state) => {
+  return { ...state, campers: [], error: true, loading: false };
 };

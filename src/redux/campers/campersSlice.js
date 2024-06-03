@@ -7,6 +7,8 @@ import {
   handleFetchAdvertsFulfilled,
   handleFetchFilteredAdvertsFulfilled,
   handleAddFavorite,
+  handleFetchFilteredAdvertsRejected,
+  handleRemoveFavorite,
 } from './campersHandlers';
 
 export const campersSlice = createSlice({
@@ -14,6 +16,7 @@ export const campersSlice = createSlice({
   initialState,
   reducers: {
     addFavorite: handleAddFavorite,
+    removeFavorite: handleRemoveFavorite,
     setPage: (state, action) => {
       state.page = action.payload;
     },
@@ -34,7 +37,7 @@ export const campersSlice = createSlice({
       //getFiltered
       .addCase(fetchFilteredAdverts.pending, handlePending)
       .addCase(fetchFilteredAdverts.fulfilled, handleFetchFilteredAdvertsFulfilled)
-      .addCase(fetchFilteredAdverts.rejected, handleRejected);
+      .addCase(fetchFilteredAdverts.rejected, handleFetchFilteredAdvertsRejected);
   },
 });
 

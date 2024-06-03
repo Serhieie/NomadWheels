@@ -28,8 +28,8 @@ export const fetchAdvertById = createAsyncThunk(
       const campers = await getAdvertById(id);
       return campers;
     } catch (error) {
-      if (error.status === 404) {
-        toast.error('Item not found');
+      if (error.message === 'Not found') {
+        toast.error("Sorry! We didn't find this car");
       }
 
       return rejectWithValue(error.message);
@@ -48,9 +48,6 @@ export const fetchFilteredAdverts = createAsyncThunk(
       toast.success(`Success we found ${filteredByDetails.length} cars!`);
       return filteredByDetails;
     } catch (error) {
-      if (error.status === 404) {
-        toast.error('No cars with this filter, try to find somethin else');
-      }
       return rejectWithValue(error.message);
     }
   }

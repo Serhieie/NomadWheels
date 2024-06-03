@@ -12,10 +12,7 @@ import { createTypeList } from '../../../helpers/createTypeList';
 import { validationSchema } from '../../../schemas/filterSchema';
 import { resetFilter, selectFilter, setFilter } from '../../../redux/filter/filterSlice';
 import { areFiltersSet } from '../../../helpers/areFiltersSet';
-import {
-  fetchAdverts,
-  fetchFilteredAdverts,
-} from '../../../redux/campers/campersOperation';
+import { fetchAdverts } from '../../../redux/campers/campersOperation';
 import { setNoItems } from '../../../redux/campers/campersSlice';
 
 export const FilterParts = () => {
@@ -32,7 +29,6 @@ export const FilterParts = () => {
 
   const onSubmit = (data) => {
     dispatch(setFilter(data));
-    dispatch(fetchFilteredAdverts(data));
   };
 
   const handleResetFilter = () => {

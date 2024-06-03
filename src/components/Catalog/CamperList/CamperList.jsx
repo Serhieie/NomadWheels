@@ -19,6 +19,10 @@ export const CamperList = () => {
   const dispatch = useDispatch();
   const showNoItems = campers.length === 0;
 
+  // useEffect(() => {
+  //   dispatch(setPage(1));
+  // }, []);
+
   useEffect(() => {
     if (filters?.location || filters?.form || filters?.details.length > 0) {
       dispatch(fetchFilteredAdverts(filters));
@@ -37,7 +41,7 @@ export const CamperList = () => {
       ) : (
         <ul className={styles.camperList}>
           {campers?.map((item) => (
-            <CamperListItem key={nanoid()} item={item} />
+            <CamperListItem key={nanoid()} item={item} icon="emptyHeart" />
           ))}
         </ul>
       )}

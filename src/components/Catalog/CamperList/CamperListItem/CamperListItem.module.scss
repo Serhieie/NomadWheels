@@ -6,6 +6,7 @@
 .camperListItem {
   padding: 24px;
   overflow: hidden;
+  background-color: fn.get-color('light');
   @include mx.border(20px);
 }
 .cardWrapper {
