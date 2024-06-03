@@ -6,7 +6,6 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  @include mx.scroll-bar('accent-primary');
 }
 
 *,
