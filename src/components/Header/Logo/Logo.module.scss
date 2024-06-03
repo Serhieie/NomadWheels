@@ -32,6 +32,13 @@
 .whiteLogo {
   background-color: fn.get-color('light-primary');
   color: fn.get-color('accent-primary');
+
+  @include mx.ease('fast');
+  &:hover,
+  &:hover .whiteDot {
+    background-color: fn.get-color('light-secondary');
+    color: fn.get-color('accent-primary-hover');
+  }
 }
 .whiteDot {
   background-color: fn.get-color('accent-primary');
@@ -40,6 +47,13 @@
 .redLogo {
   background-color: fn.get-color('accent-primary');
   color: fn.get-color('light-primary');
+
+  @include mx.ease('fast');
+  &:hover,
+  &:hover .redDot {
+    background-color: fn.get-color('accent-primary-hover');
+    color: fn.get-color('light-secondary');
+  }
 }
 
 .redDot {

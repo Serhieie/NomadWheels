@@ -6,7 +6,9 @@ export const instance = axios.create({
 
 export const apiCall = async (path, method = 'get', body) => {
   try {
-    const response = await instance[method](path, body);
+    const response = await instance[method](path, body, {
+      headers: { 'content-type': 'application/json' },
+    });
     return response.data;
   } catch (error) {
     throw new Error(error.response ? error.response.data : error.message);
@@ -16,3 +18,27 @@ export const apiCall = async (path, method = 'get', body) => {
 export const getAdverts = (page, limit) => apiCall(`?page=${page}&limit=${limit}`);
 
 export const getAdvertById = (id) => apiCall(`${id}`);
+
+export const getFilteredAdverts = (filteredAdverts, details) => {
+  return filteredAdverts.filter((advert) => {
+    for (const detail of details) {
+      let detailToCompare = detail.toLowerCase();
+      if (detail === 'TV' || detail === 'CD') {
+        detailToCompare = detail;
+      } else if (detail === 'AC') {
+        detailToCompare = 'airConditioner';
+      }
+      if (detail === 'Automatic') {
+        return advert.transmission === 'automatic';
+      }
+      if (
+        !advert.details ||
+        !(detailToCompare in advert.details) ||
+        advert.details[detailToCompare] === 0
+      ) {
+        return false;
+      }
+    }
+    return true;
+  });
+};

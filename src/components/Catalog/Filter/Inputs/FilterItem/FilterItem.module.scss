@@ -1,0 +1,57 @@
+@use '../../../../../styles/utils/placeholders';
+@use '../../../../../styles/utils/variables' as var;
+@use '../../../../../styles/utils/functions' as fn;
+@use '../../../../../styles/utils/mixins' as mx;
+
+.checkbox {
+  @extend %hidden;
+
+  &:checked + label {
+    border: 1px solid fn.get-color('accent-primary');
+  }
+}
+
+.label {
+  @extend %accent-text;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+
+  background-color: fn.get-color('light');
+  color: fn.get-color('dark-primary');
+
+  height: 95px;
+  padding: 10px;
+  max-width: 112px;
+  border-radius: 50px;
+
+  @include mx.border();
+  @include mx.ease('slow', border-color);
+  &:hover {
+    border: 1px solid fn.get-color('accent-primary');
+  }
+}
+
+.equipmentIcon {
+  fill: transparent;
+  stroke: fn.get-color('dark-primary');
+}
+
+.typesIcon {
+  fill: fn.get-color('dark-primary');
+  stroke: fn.get-color('dark-primary');
+  flex-shrink: 0;
+}
+
+.acIcon {
+  stroke: transparent;
+  fill: transparent;
+  padding: 1px;
+  width: 60px;
+}

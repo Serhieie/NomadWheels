@@ -19,6 +19,9 @@
   min-width: 155px;
   border-radius: 50px;
 
+  text-align: center;
+  user-select: none;
+
   @include mx.ease('fast', background-color);
 }
 

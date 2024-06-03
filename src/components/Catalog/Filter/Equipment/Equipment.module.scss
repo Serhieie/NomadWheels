@@ -1,0 +1,57 @@
+@use '../../../../styles/utils/placeholders';
+@use '../../../../styles/utils/variables' as var;
+@use '../../../../styles/utils/functions' as fn;
+@use '../../../../styles/utils/mixins' as mx;
+
+.equipmentWrapper {
+  span {
+    color: fn.get-color('dark-secondary');
+  }
+}
+
+.equipment {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+  gap: 24px;
+
+  hr {
+    height: 1px;
+    width: 100%;
+    background-color: fn.get-color('border-color');
+  }
+
+  h3 {
+    @extend %section-title;
+  }
+}
+
+.equipment_list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  @include mx.mq('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .resultSpan {
+    @extend %details;
+  }
+
+  .resultAmount {
+    background-color: fn.get-color('accent-primary');
+    color: fn.get-color('light-primary');
+    font-size: 18px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    @include mx.frame(20px);
+  }
+}

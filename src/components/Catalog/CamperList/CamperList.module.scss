@@ -7,6 +7,7 @@
   grid-area: list;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .camperList {
@@ -16,5 +17,5 @@
 
   gap: 32px;
 
-  min-height: 100dvh;
+  min-height: calc(100dvh - 100px);
 }

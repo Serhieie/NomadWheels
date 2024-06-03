@@ -3,18 +3,27 @@ import { nanoid } from 'nanoid';
 import { CamperListItem } from './CamperListItem/CamperListItem';
 import styles from './CamperList.module.scss';
 import { Button } from '../../CustomItems/Button';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchAdverts } from '../../../redux/campers/campersOperation';
+import {
+  fetchAdverts,
+  fetchFilteredAdverts,
+} from '../../../redux/campers/campersOperation';
 import { setPage } from '../../../redux/campers/campersSlice';
+import { selectFilter } from '../../../redux/filter/filterSlice';
+import NoItems from './NoItems/NoItems';
 
 export const CamperList = () => {
   const { campers, page, loading, noItems } = useCampersState();
+  const filters = useSelector(selectFilter);
   const dispatch = useDispatch();
+  const showNoItems = campers.length === 0;
 
   useEffect(() => {
-    dispatch(fetchAdverts({ page }));
-  }, [page, dispatch]);
+    if (filters?.location || filters?.form || filters?.details.length > 0) {
+      dispatch(fetchFilteredAdverts(filters));
+    } else dispatch(fetchAdverts({ page }));
+  }, [page, dispatch, filters]);
 
   const handleLoadMore = () => {
     if (loading) return;
@@ -23,12 +32,16 @@ export const CamperList = () => {
 
   return (
     <div className={styles.camperListWrapper}>
-      <ul className={styles.camperList}>
-        {campers.map((item) => (
-          <CamperListItem key={nanoid()} item={item} />
-        ))}
-      </ul>
-      {!noItems && (
+      {showNoItems && !loading ? (
+        <NoItems />
+      ) : (
+        <ul className={styles.camperList}>
+          {campers?.map((item) => (
+            <CamperListItem key={nanoid()} item={item} />
+          ))}
+        </ul>
+      )}
+      {!noItems && !showNoItems && (
         <Button
           type="button"
           text={'Load more'}

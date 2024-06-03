@@ -2,6 +2,7 @@ import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import 'normalize.css';
+import 'react-toastify/dist/ReactToastify.css';
 import '../styles/main.scss';
 
 // const Cast = lazy(() => import('./Features/Features'));

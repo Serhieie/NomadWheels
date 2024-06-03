@@ -4,12 +4,18 @@
 @use '../../styles/utils/mixins' as mx;
 
 .catalog {
-  padding: 40px 64px;
+  padding: 28px 44px;
   display: grid;
-  gap: 64px;
-  grid-template-columns: 360px 1fr 1fr;
+  gap: 44px;
+  grid-template-columns: 230px 1fr 1fr;
   grid-template-areas:
     'filter  list list '
     'filter  list list '
     '   .    list list';
+
+  @include mx.mq('lg') {
+    padding: 40px 64px;
+    gap: 64px;
+    grid-template-columns: 360px 1fr 1fr;
+  }
 }

@@ -6,7 +6,16 @@ export const handleRejected = (state) => {
 };
 
 export const handleFetchAdvertsFulfilled = (state, action) => {
-  if (state.campers.length === 4 && state.page === 1) return;
+  if (state.filter) {
+    return {
+      ...state,
+      campers: action.payload,
+      filter: false,
+      loading: false,
+      noItems: false,
+    };
+  }
+  if (state.campers.length === 4 && state.page === 1) return { ...state, loading: false };
   if (action.payload.length < 4) {
     return {
       ...state,
@@ -43,4 +52,16 @@ export const handleAddFavorite = (state, action) => {
       state.favorites.push(camper);
     }
   }
+};
+
+//Filtered
+export const handleFetchFilteredAdvertsFulfilled = (state, action) => {
+  return {
+    ...state,
+    campers: action.payload,
+    filter: true,
+    loading: false,
+    noItems: true,
+    page: 1,
+  };
 };

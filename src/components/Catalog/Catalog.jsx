@@ -1,5 +1,5 @@
 import { CamperList } from './CamperList/CamperList';
-import { FilterParts } from './FilterParts/FilterParts';
+import { FilterParts } from './Filter/Filter';
 import styles from './Catalog.module.scss';
 
 export const Catalog = () => {

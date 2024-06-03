@@ -1,0 +1,34 @@
+@use '../../../../styles/utils/placeholders';
+@use '../../../../styles/utils/variables' as var;
+@use '../../../../styles/utils/functions' as fn;
+@use '../../../../styles/utils/mixins' as mx;
+
+.type {
+  margin-bottom: 32px;
+
+  hr {
+    height: 1px;
+    width: 100%;
+    background-color: fn.get-color('border-color');
+  }
+
+  h3 {
+    @extend %section-title;
+  }
+}
+
+.type {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.type_list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  @include mx.mq('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

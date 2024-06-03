@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 30px;
+  gap: 16px;
   width: 100%;
   overflow: hidden;
 
@@ -17,6 +17,10 @@
     .navigationItem_link {
       padding: 0;
     }
+  }
+
+  @include mx.mq('lg') {
+    gap: 30px;
   }
 }
 
@@ -53,7 +57,7 @@
 }
 
 .navigationItem_link {
-  @extend %section-title;
+  @extend %accent-text;
   position: relative;
   display: inline-block;
   padding: 30px 4px;
@@ -92,5 +96,9 @@
     &::before {
       transform: translateY(44%);
     }
+  }
+
+  @include mx.mq('lg') {
+    font-size: 20px;
   }
 }

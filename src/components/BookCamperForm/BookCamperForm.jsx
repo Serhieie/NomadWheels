@@ -1,15 +1,17 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { schema } from './schema/schema';
+import { schema } from '../../schemas/bookCamperSchema';
 import styles from './BookCamperForm.module.scss';
 import { Button } from '../CustomItems/Button';
 
 export const BookCamperForm = () => {
+  const defaultValues = {};
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
+    defaultValues,
     resolver: yupResolver(schema),
   });
 

@@ -10,7 +10,7 @@
 
   & > .pinSvg {
     position: absolute;
-    top: 70%;
+    top: 54%;
     left: 18px;
     fill: transparent;
     stroke: fn.get-color('dark-primary');
@@ -26,6 +26,8 @@
   padding: 18px;
   padding-left: 44px;
   margin-top: 8px;
+
+  border-radius: 10px;
 
   &::placeholder {
     color: fn.get-color('dark-secondary');
