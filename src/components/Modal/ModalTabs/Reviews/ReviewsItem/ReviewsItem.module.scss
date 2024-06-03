@@ -1,0 +1,54 @@
+@use '../../../../../styles/utils/placeholders';
+@use '../../../../../styles/utils/functions' as fn;
+@use '../../../../../styles/utils/mixins' as mx;
+
+.reviewsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  p {
+    color: fn.get-color('dark-secondary');
+  }
+}
+
+.reviewItemTopPart {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.userFrame {
+  @extend %main-title;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: fn.get-color('light-primary');
+  color: fn.get-color('accent-primary');
+  @include mx.frame(60px, true);
+}
+
+.nameContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .userName {
+    @extend %vehicle-text;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.starsList {
+  display: flex;
+  gap: 4px;
+}
+
+.goldenStarIcon {
+  fill: fn.get-color('rating');
+  stroke: fn.get-color('rating');
+}
+.regularStarIcon {
+  fill: fn.get-color('light-secondary');
+}

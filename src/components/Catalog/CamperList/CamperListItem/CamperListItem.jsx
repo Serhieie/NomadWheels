@@ -1,10 +1,19 @@
-import { createDetailsList } from '../../../../helpers/createDetailsList';
+import { useDispatch } from 'react-redux';
+import { createDetailsList } from '../../../../helpers';
 import { Button } from '../../../CustomItems/Button';
 import styles from './CamperListItem.module.scss';
 import { CardHead } from './CardHead/CardHead';
 import { LabelList } from './LabelList/LabelList';
+import { setActive, setIsCamperModalOpen } from '../../../../redux/campers/campersSlice';
 
 export const CamperListItem = ({ item, icon }) => {
+  const dispatch = useDispatch();
+
+  const handleModalOpen = () => {
+    dispatch(setActive(item));
+    dispatch(setIsCamperModalOpen(true));
+  };
+
   return (
     <li className={styles.camperListItem}>
       <div className={styles.cardWrapper}>
@@ -14,8 +23,13 @@ export const CamperListItem = ({ item, icon }) => {
         <div className={styles.camperListItem_info}>
           <CardHead item={item} icon={icon} />
           <p className={styles.description}>{item.description}</p>
-          <LabelList item={createDetailsList(item)} />
-          <Button text="Show more" type="button" width={166} />
+          <LabelList item={createDetailsList(item)} fixedHeight={true} />
+          <Button
+            text="Show more"
+            type="button"
+            width={166}
+            handleClick={handleModalOpen}
+          />
         </div>
       </div>
     </li>

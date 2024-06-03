@@ -1,0 +1,42 @@
+@use '../../../styles/utils/placeholders';
+@use '../../../styles/utils/functions' as fn;
+@use '../../../styles/utils/mixins' as mx;
+
+//MODAL HEAD
+
+.modalHeadWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .closeIcon {
+    stroke: fn.get-color('dark-primary');
+    cursor: pointer;
+    @include mx.ease('fast');
+    &:hover {
+      stroke: fn.get-color('accent-primary-hover');
+    }
+  }
+
+  h1 {
+    @extend %main-title;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.price {
+  @extend %main-title;
+}
+
+.modalHeadBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

@@ -1,0 +1,34 @@
+@use '../../../../styles/utils/placeholders';
+@use '../../../../styles/utils/functions' as fn;
+@use '../../../../styles/utils/mixins' as mx;
+
+.spansWrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.infoNameSpan,
+.infoNameSpanActive {
+  @extend %section-title;
+  padding-bottom: 24px;
+  color: fn.get-color('dark-secondary');
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  @include mx.ease('fast');
+}
+
+.infoNameSpanActive {
+  color: fn.get-color('dark');
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: fn.get-color('accent-primary');
+  }
+}

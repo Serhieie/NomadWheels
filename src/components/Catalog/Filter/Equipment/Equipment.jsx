@@ -12,7 +12,7 @@ export const Equipment = ({ labels, register }) => {
         <div className={styles.result}>
           <span>Filters</span>
           <span className={styles.resultSpan}>
-            Total: <span className={styles.resultAmount}>{totalItems}</span> cars
+            On page : <span className={styles.resultAmount}>{totalItems}</span> cars
           </span>
         </div>
       )}

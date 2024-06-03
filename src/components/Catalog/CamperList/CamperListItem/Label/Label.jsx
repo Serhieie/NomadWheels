@@ -1,9 +1,13 @@
 import styles from './Label.module.scss';
 import sprite from '../../../../../assets/sprite.svg';
 
-export const Label = ({ labelInfo }) => {
+export const Label = ({ labelInfo, fixedHeight }) => {
   const value =
-    labelInfo.icon === 'Adults' || labelInfo.icon === 'Beds' ? labelInfo.value : '';
+    labelInfo.icon === 'Adults' || labelInfo.icon === 'Beds'
+      ? labelInfo.value
+      : !fixedHeight && labelInfo.value !== 0
+      ? labelInfo.value
+      : '';
 
   return (
     labelInfo.value !== 0 && (

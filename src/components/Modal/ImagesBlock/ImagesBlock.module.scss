@@ -1,0 +1,17 @@
+@use '../../../styles/utils/placeholders';
+@use '../../../styles/utils/functions' as fn;
+@use '../../../styles/utils/mixins' as mx;
+
+.imgsBlock {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+
+  user-select: none;
+
+  li {
+    background-color: fn.get-color('overlay');
+    @include mx.frame(290px, false, 10px, 310px, center);
+    @include mx.border(12px);
+  }
+}

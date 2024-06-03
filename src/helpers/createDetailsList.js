@@ -1,11 +1,3 @@
-export const shuffleArray = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-};
-
 export const createDetailsList = (item) => {
   if (!item) {
     return [
@@ -39,10 +31,6 @@ export const createDetailsList = (item) => {
     { icon: 'Bathroom', value: item.details?.toilet },
     { icon: 'Water', value: item.details?.water },
   ];
-
-  //рандомні значення
-  //   const shuffledDetails = shuffleArray(allDetails);
-  //   const randomDetails = shuffledDetails.slice(0, 7);
 
   return [...fixedDetails, ...allDetails];
 };

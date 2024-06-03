@@ -1,0 +1,10 @@
+@use '../../../../styles/utils/placeholders';
+@use '../../../../styles/utils/functions' as fn;
+@use '../../../../styles/utils/mixins' as mx;
+
+.featuresContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  width: 435px;
+}

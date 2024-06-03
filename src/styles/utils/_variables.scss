@@ -18,6 +18,7 @@ $colors: (
   'dark-tertiary': #292932,
   'shadow-color': rgba(0, 0, 0, 0.2),
   'border-color': rgba(16, 24, 40, 0.2),
+  'hr': rgba(16, 24, 40, 0.1),
   'accent-primary': #e44848,
   'accent-primary-hover': #d84343,
   'rating': #ffc531,
@@ -27,6 +28,7 @@ $colors: (
   'info': #4e75ff,
   'transparent': transparent,
   'current': currentColor,
+  'overlay': rgba(17, 18, 19, 0.4),
 );
 
 $paddings: (

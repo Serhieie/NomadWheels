@@ -1,0 +1,33 @@
+@use '../../../../../styles/utils/placeholders';
+@use '../../../../../styles/utils/functions' as fn;
+@use '../../../../../styles/utils/mixins' as mx;
+
+.vehicleDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  ul {
+    @extend %vehicle-text;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    li {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  hr {
+    height: 1px;
+    width: 100%;
+    background-color: fn.get-color('hr');
+  }
+}
+
+.vehicleDetailsList {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}

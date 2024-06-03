@@ -4,9 +4,7 @@ import Layout from './Layout/Layout';
 import 'normalize.css';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/main.scss';
-// const Cast = lazy(() => import('./Features/Features'));
-// const Reviews = lazy(() => import('./Reviews/Reviews'));
-// const InfoPage = lazy(() => import('../pages/InfoPage'));
+
 const CatalogPage = lazy(() => import('../pages/CatalogPage'));
 const HomePage = lazy(() => import('../pages/HomePage'));
 const FavoritePage = lazy(() => import('../pages/FavoritesPage'));
@@ -18,7 +16,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/Catalog" element={<CatalogPage />} />
         <Route path="/Favorites" element={<FavoritePage />} />
-        <Route path="*" element={<div>Not Found ...</div>} />
+        <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>
   );

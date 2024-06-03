@@ -23,6 +23,12 @@ export const campersSlice = createSlice({
     setNoItems: (state, action) => {
       state.noItems = action.payload;
     },
+    setIsCamperModalOpen: (state, action) => {
+      state.isCamperModalOpen = action.payload;
+    },
+    setActive: (state, action) => {
+      state.activeCamper = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -49,6 +55,8 @@ export const {
   removeFavorite,
   setPage,
   setNoItems,
+  setIsCamperModalOpen,
+  setActive,
 } = campersSlice.actions;
 
 export default campersSlice.reducer;

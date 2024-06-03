@@ -1,52 +1,48 @@
 @use '../../../../../styles/utils/placeholders';
-@use '../../../../../styles/utils/variables' as var;
 @use '../../../../../styles/utils/functions' as fn;
 @use '../../../../../styles/utils/mixins' as mx;
 
-.cardHead {
-  .topPart {
+.bottomPart {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  user-select: none;
+
+  .location,
+  .rating {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
-    gap: 12px;
-
-    h2 {
-      @extend %main-title;
-    }
-    .price {
-      @extend %main-title;
-      margin-left: auto;
-    }
+    gap: 4px;
   }
+}
 
-  .bottomPart {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+.topPart {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 12px;
 
-    user-select: none;
-
-    .location,
-    .rating {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .rating {
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
-    .svgRating {
-      fill: fn.get-color('rating');
-    }
-
-    .svgLocation {
-      fill: transparent;
-      stroke: fn.get-color('dark-primary');
-    }
+  h2 {
+    @extend %main-title;
   }
+  .price {
+    @extend %main-title;
+    margin-left: auto;
+  }
+}
+.rating {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.svgRating {
+  fill: fn.get-color('rating');
+}
+
+.svgLocation {
+  fill: transparent;
+  stroke: fn.get-color('dark-primary');
 }
 
 .hearth {

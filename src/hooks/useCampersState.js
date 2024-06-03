@@ -7,12 +7,12 @@ import {
   selectFavorites,
   selectPage,
   selectNoItems,
-  //   selectFilteredCampers,
+  selectIsCamperModalOpen,
 } from '../redux/campers/campersSelectors';
 
 export const useCampersState = () => {
   const campers = useSelector(selectCampers);
-  //   const filteredCampers = useSelector(selectFilteredCampers);
+  const isCamperModalOpen = useSelector(selectIsCamperModalOpen);
   const favorites = useSelector(selectFavorites);
   const page = useSelector(selectPage);
   const activeCamper = useSelector(selectActiveCamper);
@@ -22,7 +22,7 @@ export const useCampersState = () => {
 
   return {
     campers,
-    // filteredCampers,
+    isCamperModalOpen,
     favorites,
     activeCamper,
     noItems,

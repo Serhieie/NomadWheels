@@ -1,23 +1,40 @@
-@use '../../styles/utils/placeholders';
-@use '../../styles/utils/variables' as var;
-@use '../../styles/utils/functions' as fn;
-@use '../../styles/utils/mixins' as mx;
+@use '../../../styles/utils/placeholders';
+@use '../../../styles/utils/functions' as fn;
+@use '../../../styles/utils/mixins' as mx;
 
 .formWrapper {
   @extend %section-frame;
+
+  position: relative;
   @include mx.border;
 
   width: 448px;
-  height: 532px;
-}
 
+  .errorWrapper {
+    position: absolute;
+    left: 0;
+    top: -130px;
+    min-height: 40px;
+    width: 448px;
+    padding: 10px;
+    background-color: fn.get-color('light');
+    overflow-y: auto;
+    overflow: hidden;
+
+    @include mx.border(10px);
+    border-color: fn.get-color('accent-primary');
+  }
+}
+.errorText {
+  color: fn.get-color('accent-primary');
+}
 .rentForm {
   display: flex;
   flex-direction: column;
   gap: 24px;
 
   .infoWrapper {
-    width: 258px;
+    user-select: none;
     p {
       margin-top: 4px;
       color: fn.get-color('dark-secondary');

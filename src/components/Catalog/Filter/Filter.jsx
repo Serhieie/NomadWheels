@@ -6,14 +6,12 @@ import styles from './FilterParts.module.scss';
 import { LocationInput } from './Inputs/LocationInput/LocationInput';
 import { Button } from '../../CustomItems/Button';
 import { Equipment } from './Equipment/Equipment';
-import { createDetailsList } from '../../../helpers/createDetailsList';
+import { createDetailsList, createTypeList, areFiltersSet } from '../../../helpers';
 import { Type } from './Type/Type';
-import { createTypeList } from '../../../helpers/createTypeList';
-import { validationSchema } from '../../../schemas/filterSchema';
 import { resetFilter, selectFilter, setFilter } from '../../../redux/filter/filterSlice';
-import { areFiltersSet } from '../../../helpers/areFiltersSet';
 import { fetchAdverts } from '../../../redux/campers/campersOperation';
 import { setNoItems } from '../../../redux/campers/campersSlice';
+import { filterSchema } from '../../../schemas';
 
 export const FilterParts = () => {
   const filter = useSelector(selectFilter);
@@ -24,7 +22,7 @@ export const FilterParts = () => {
 
   const { register, handleSubmit, reset } = useForm({
     defaultValues: filter,
-    resolver: yupResolver(validationSchema),
+    resolver: yupResolver(filterSchema),
   });
 
   const onSubmit = (data) => {

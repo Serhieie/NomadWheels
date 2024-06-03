@@ -1,5 +1,4 @@
 @use '../../../styles/utils/placeholders';
-@use '../../../styles/utils/variables' as var;
 @use '../../../styles/utils/functions' as fn;
 @use '../../../styles/utils/mixins' as mx;
 
@@ -61,6 +60,8 @@
   flex-direction: column;
   justify-content: space-around;
 
+  user-select: none;
+
   padding: 24px;
   background-color: fn.get-color('light-primary');
   height: 36dvh;
@@ -76,5 +77,20 @@
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .hero {
     background-image: url('../../assets/images/camperHeroX2.webp');
+  }
+}
+
+.close {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  stroke: fn.get-color('dark-primary');
+  cursor: pointer;
+  z-index: 40;
+
+  @include mx.ease('fast', stroke);
+
+  &:hover {
+    stroke: fn.get-color('accent-primary');
   }
 }

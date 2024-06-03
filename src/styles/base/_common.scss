@@ -57,3 +57,11 @@ button {
 [hidden] {
   display: none;
 }
+
+.body--no-scroll {
+  overflow: hidden;
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}

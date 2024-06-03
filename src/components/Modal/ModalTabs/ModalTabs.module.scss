@@ -1,0 +1,22 @@
+@use '../../../styles/utils/placeholders';
+@use '../../../styles/utils/functions' as fn;
+@use '../../../styles/utils/mixins' as mx;
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.camperDescription {
+  color: fn.get-color('dark-secondary');
+}
+
+.headWrapper {
+  border-bottom: 1px solid fn.get-color('border-color');
+}
+
+.tabsContentWrapper {
+  display: flex;
+  gap: 24px;
+}

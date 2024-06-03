@@ -18,7 +18,7 @@ export const Main = () => {
         pauseOnHover
         theme="colored"
       />
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader isSuspense={true} />}>
         <Outlet />
       </Suspense>
     </main>

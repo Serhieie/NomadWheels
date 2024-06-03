@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const validationSchema = yup.object().shape({
+export const filterSchema = yup.object().shape({
   location: yup
     .string()
     .test('is-filled', 'At least one field must be filled', function (value) {

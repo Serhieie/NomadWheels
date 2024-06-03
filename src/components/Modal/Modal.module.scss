@@ -1,9 +1,42 @@
 @use '../../styles/utils/placeholders';
-@use '../../styles/utils/variables' as var;
 @use '../../styles/utils/functions' as fn;
 @use '../../styles/utils/mixins' as mx;
 
 .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  overflow-y: auto;
+  background-color: fn.get-color('overlay');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
 }
+
 .modal {
+  position: absolute;
+  top: 20px;
+  background-color: fn.get-color('light');
+  padding: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.heroModal {
+  position: relative;
+  padding: 20px;
+}
+
+.modalContentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 902px;
+}
+
+.camperDescription {
+  color: fn.get-color('dark-secondary');
 }
