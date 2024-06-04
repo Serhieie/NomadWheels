@@ -6,6 +6,7 @@ import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
 import { setPage } from '../../redux/campers/campersSlice';
 import { NavLink } from 'react-router-dom';
+import { Modal } from '../Modal/Modal';
 
 export const Favorites = () => {
   const { favorites } = useCampersState();
@@ -40,6 +41,7 @@ export const Favorites = () => {
           </NavLink>
         </div>
       )}
+      <Modal />
     </section>
   );
 };

@@ -28,6 +28,7 @@ export const StyledDatepicker = ({ control }) => {
             className={styles.customInput}
             dateFormat={'dd-MM-yyyy'}
             startDate={startDate}
+            minDate={startDate}
             icon={
               <svg className={styles.datePickerIcon} width={20} height={20}>
                 <use href={`${sprite}#icon-Calendar`}></use>
