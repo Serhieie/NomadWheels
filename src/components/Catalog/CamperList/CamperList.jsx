@@ -32,7 +32,7 @@ export const CamperList = () => {
 
   return (
     <div className={styles.camperListWrapper}>
-      {showNoItems && !loading ? (
+      {showNoItems ? (
         <NoItems />
       ) : (
         <ul className={styles.camperList}>

@@ -9,7 +9,6 @@ import { Equipment } from './Equipment/Equipment';
 import { createDetailsList, createTypeList, areFiltersSet } from '../../../helpers';
 import { Type } from './Type/Type';
 import { resetFilter, selectFilter, setFilter } from '../../../redux/filter/filterSlice';
-import { fetchAdverts } from '../../../redux/campers/campersOperation';
 import { setNoItems } from '../../../redux/campers/campersSlice';
 import { filterSchema } from '../../../schemas';
 
@@ -32,7 +31,6 @@ export const FilterParts = () => {
   const handleResetFilter = () => {
     dispatch(resetFilter());
     dispatch(setNoItems(false));
-    dispatch(fetchAdverts({ page: 1 }));
     reset({
       location: '',
       details: [],
