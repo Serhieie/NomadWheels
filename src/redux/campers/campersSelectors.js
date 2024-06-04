@@ -2,6 +2,7 @@ export const selectCampers = (state) => state.campers.campers;
 export const selectFavorites = (state) => state.campers.favorites;
 export const selectActiveCamper = (state) => state.campers.activeCamper;
 export const selectIsCamperModalOpen = (state) => state.campers.isCamperModalOpen;
+export const selectFilteredLoading = (state) => state.campers.filteredLoading;
 export const selectLoading = (state) => state.campers.loading;
 export const selectError = (state) => state.campers.error;
 export const selectPage = (state) => state.campers.page;

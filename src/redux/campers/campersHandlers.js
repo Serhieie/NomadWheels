@@ -60,17 +60,21 @@ export const handleRemoveFavorite = (state, action) => {
 };
 
 //Filtered
+
+export const handleFetchFilteredAdvertsPending = (state) => {
+  return { ...state, filteredLoading: true };
+};
 export const handleFetchFilteredAdvertsFulfilled = (state, action) => {
   return {
     ...state,
     campers: action.payload,
     filter: true,
-    loading: false,
+    filteredLoading: false,
     noItems: true,
     page: 1,
   };
 };
 
 export const handleFetchFilteredAdvertsRejected = (state) => {
-  return { ...state, campers: [], error: true, loading: false };
+  return { ...state, campers: [], error: true, filteredLoading: false };
 };

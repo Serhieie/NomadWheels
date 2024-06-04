@@ -32,26 +32,24 @@ export const CamperList = () => {
 
   return (
     <div className={styles.camperListWrapper}>
-      <div>
-        {showNoItems && !loading ? (
-          <NoItems />
-        ) : (
-          <ul className={styles.camperList}>
-            {campers?.map((item) => (
-              <CamperListItem key={nanoid()} item={item} icon="emptyHeart" />
-            ))}
-          </ul>
-        )}
-        {!noItems && !showNoItems && (
-          <Button
-            type="button"
-            text={'Load more'}
-            loader={true}
-            accent={false}
-            handleClick={handleLoadMore}
-          />
-        )}
-      </div>
+      {showNoItems && !loading ? (
+        <NoItems />
+      ) : (
+        <ul className={styles.camperList}>
+          {campers?.map((item) => (
+            <CamperListItem key={nanoid()} item={item} icon="emptyHeart" />
+          ))}
+        </ul>
+      )}
+      {!noItems && !showNoItems && (
+        <Button
+          type="button"
+          text={'Load more'}
+          loader={true}
+          accent={false}
+          handleClick={handleLoadMore}
+        />
+      )}
     </div>
   );
 };

@@ -10,8 +10,9 @@ export const Button = ({
   handleClick = null,
   type = 'button',
   loader = false,
+  filters = false,
 }) => {
-  const { loading } = useCampersState();
+  const { loading, filteredLoading } = useCampersState();
   return (
     <button
       className={clsx(styles.button, {
@@ -22,7 +23,7 @@ export const Button = ({
       type={type}
       style={{ minWidth: width }}
     >
-      {loader && loading ? <Loader /> : text}
+      {(loader && loading) || (filters && filteredLoading) ? <Loader /> : text}
     </button>
   );
 };

@@ -52,7 +52,7 @@ export const FilterParts = () => {
         <LocationInput register={register} />
         <Equipment labels={labels} register={register} />
         <Type types={types} register={register} />
-        <Button type="submit" text="Search" loader={true} />
+        <Button type="submit" text="Search" filters={true} />
       </form>
     </div>
   );

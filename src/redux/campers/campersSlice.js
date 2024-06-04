@@ -9,6 +9,7 @@ import {
   handleAddFavorite,
   handleFetchFilteredAdvertsRejected,
   handleRemoveFavorite,
+  handleFetchFilteredAdvertsPending,
 } from './campersHandlers';
 
 export const campersSlice = createSlice({
@@ -37,7 +38,7 @@ export const campersSlice = createSlice({
       .addCase(fetchAdverts.fulfilled, handleFetchAdvertsFulfilled)
       .addCase(fetchAdverts.rejected, handleRejected)
       //getFiltered
-      .addCase(fetchFilteredAdverts.pending, handlePending)
+      .addCase(fetchFilteredAdverts.pending, handleFetchFilteredAdvertsPending)
       .addCase(fetchFilteredAdverts.fulfilled, handleFetchFilteredAdvertsFulfilled)
       .addCase(fetchFilteredAdverts.rejected, handleFetchFilteredAdvertsRejected);
   },

@@ -8,6 +8,7 @@ import {
   selectPage,
   selectNoItems,
   selectIsCamperModalOpen,
+  selectFilteredLoading,
 } from '../redux/campers/campersSelectors';
 
 export const useCampersState = () => {
@@ -16,12 +17,14 @@ export const useCampersState = () => {
   const favorites = useSelector(selectFavorites);
   const page = useSelector(selectPage);
   const activeCamper = useSelector(selectActiveCamper);
+  const filteredLoading = useSelector(selectFilteredLoading);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
   const noItems = useSelector(selectNoItems);
 
   return {
     campers,
+    filteredLoading,
     isCamperModalOpen,
     favorites,
     activeCamper,

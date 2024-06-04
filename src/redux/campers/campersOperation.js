@@ -33,9 +33,14 @@ export const fetchFilteredAdverts = createAsyncThunk(
     try {
       const filteredAdverts = await getAdvertsByFilter({ location, form });
       const filteredByDetails = getFilteredAdverts(filteredAdverts, details);
-      toast.success(`Success we found ${filteredByDetails.length} cars!`, {
-        position: 'bottom-right',
-      });
+      if (filteredByDetails.length === 0) {
+        toast.warning(`We have no cars with thise filters`, {
+          position: 'bottom-right',
+        });
+      } else
+        toast.success(`Success we found ${filteredByDetails.length} cars!`, {
+          position: 'bottom-right',
+        });
       return filteredByDetails;
     } catch (error) {
       return rejectWithValue(error.message);
