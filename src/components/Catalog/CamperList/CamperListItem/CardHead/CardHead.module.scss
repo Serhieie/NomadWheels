@@ -70,6 +70,15 @@
   background-color: fn.get-color('light-secondary');
 
   @include mx.border(10px);
+  @include mx.ease('fast', color);
+  &:hover .inFavoritePage {
+    stroke: fn.get-color('accent-primary');
+    fill: fn.get-color('accent-primary');
+  }
+
+  &:hover {
+    color: fn.get-color('accent-primary');
+  }
 }
 
 .favoriteTextCatalog {
@@ -80,4 +89,5 @@
 .inFavoritePage {
   stroke: fn.get-color('dark-secondary');
   fill: fn.get-color('dark-secondary');
+  @include mx.ease('fast', stroke, fill);
 }
