@@ -14,19 +14,18 @@
   justify-content: center;
   align-items: center;
   z-index: 5;
+  padding-bottom: 20px;
 }
 
 .modal {
   position: absolute;
-  top: 20px;
-  background-color: fn.get-color('light');
-  padding: 40px;
-  border-radius: 20px;
-  overflow: hidden;
+  top: 10px;
 }
 
 .heroModal {
   position: relative;
+  border-radius: 20px;
+  background-color: fn.get-color('light');
   padding: 20px;
 }
 
@@ -34,9 +33,16 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 902px;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 982px;
+  background-color: fn.get-color('light');
 }
 
 .camperDescription {
   color: fn.get-color('dark-secondary');
+}
+
+.modalSpacer {
+  height: 10px;
 }

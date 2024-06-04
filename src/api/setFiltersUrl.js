@@ -1,4 +1,4 @@
-export const setFilters = ({ location, form }) => {
+export const setFiltersUrl = ({ location, form }) => {
   const urlSearchParams = new URLSearchParams();
   if (location !== '') {
     urlSearchParams.append('location', location);

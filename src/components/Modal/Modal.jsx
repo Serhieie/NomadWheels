@@ -29,11 +29,14 @@ export const Modal = ({ children, hero = false }) => {
       {children ? (
         children
       ) : (
-        <div className={styles.modalContentWrapper}>
-          <ModalHead activeCamper={activeCamper} onClose={onClose} />
-          <ImagesBlock gallery={activeCamper.gallery} />
-          <ModalTabs activeCamper={activeCamper} />
-        </div>
+        <>
+          <div className={styles.modalContentWrapper}>
+            <ModalHead activeCamper={activeCamper} onClose={onClose} />
+            <ImagesBlock gallery={activeCamper.gallery} />
+            <ModalTabs activeCamper={activeCamper} />
+          </div>
+          <div className={styles.modalSpacer}></div>
+        </>
       )}
     </ReactModal>
   );

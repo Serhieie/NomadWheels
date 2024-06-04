@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { createDetailsList } from '../../../../helpers';
-import { Button } from '../../../CustomItems/Button';
+import { Button } from '../../../Button';
 import styles from './CamperListItem.module.scss';
 import { CardHead } from './CardHead/CardHead';
 import { LabelList } from './LabelList/LabelList';

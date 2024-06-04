@@ -2,7 +2,7 @@ import { useCampersState } from '../../../hooks/useCampersState';
 import { nanoid } from 'nanoid';
 import { CamperListItem } from './CamperListItem/CamperListItem';
 import styles from './CamperList.module.scss';
-import { Button } from '../../CustomItems/Button';
+import { Button } from '../../Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import {
@@ -45,7 +45,7 @@ export const CamperList = () => {
         <Button
           type="button"
           text={'Load more'}
-          loading={loading}
+          loader={true}
           accent={false}
           handleClick={handleLoadMore}
         />

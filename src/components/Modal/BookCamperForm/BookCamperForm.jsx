@@ -2,16 +2,20 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { bookCamperSchema } from '../../../schemas';
 import styles from './BookCamperForm.module.scss';
-import { Button } from '../../CustomItems/Button';
+import { Button } from '../../Button';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { setIsCamperModalOpen } from '../../../redux/campers/campersSlice';
+import { StyledDatepicker } from '../DatePicker/DatePicker';
+import { format } from 'date-fns';
+import { Errors } from './Errors';
 
-export const BookCamperForm = ({ hero = false }) => {
+export const BookCamperForm = () => {
   const defaultValues = {};
   const dispatch = useDispatch();
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -20,14 +24,16 @@ export const BookCamperForm = ({ hero = false }) => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    const formattedData = {
+      ...data,
+      date: data.date ? format(data.date, 'dd-MM-yyyy') : null,
+    };
+    console.log(formattedData);
     dispatch(setIsCamperModalOpen(false));
     toast.success('We are on the way to connect with you', {
       position: 'bottom-right',
     });
   };
-
-  const isSomeError = errors.name || errors.email || errors.date;
 
   return (
     <div className={styles.formWrapper}>
@@ -39,45 +45,16 @@ export const BookCamperForm = ({ hero = false }) => {
         <div className={styles.inputsWrapper}>
           <label htmlFor="name">
             <input id="name" placeholder="Name" {...register('name')} />
-            {!hero && errors.name && (
-              <p className={styles.errorText}>{errors.name.message}</p>
-            )}
           </label>
           <label htmlFor="email">
             <input id="email" placeholder="Email" {...register('email')} />
-            {!hero && errors.email && (
-              <p className={styles.errorText}>{errors.email.message}</p>
-            )}
           </label>
-          <label htmlFor="date">
-            <input
-              type="date"
-              placeholder="Booking date"
-              id="date"
-              {...register('date')}
-            />
-            {!hero && errors.date && (
-              <p className={styles.errorText}>{errors.date.message}</p>
-            )}
-          </label>
-
+          <StyledDatepicker control={control} />
           <label htmlFor="comment">
             <textarea id="comment" placeholder="Comment" {...register('comment')} />
-            {!hero && errors.comment && (
-              <p className={styles.errorText}>{errors.comment.message}</p>
-            )}
           </label>
         </div>
-        {isSomeError && hero && (
-          <div className={styles.errorWrapper}>
-            {errors.name && <p className={styles.errorText}> {errors.name.message}</p>}
-            {errors.email && <p className={styles.errorText}>{errors.email.message}</p>}
-            {errors.date && <p className={styles.errorText}>{errors.date.message}</p>}
-            {errors.comment && (
-              <p className={styles.errorText}>{errors.comment.message}</p>
-            )}
-          </div>
-        )}
+        <Errors errors={errors} />
         <Button type="submit" text="Send" />
       </form>
     </div>

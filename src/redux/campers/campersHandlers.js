@@ -43,14 +43,6 @@ export const handleFetchAdvertsFulfilled = (state, action) => {
   };
 };
 
-export const handleFetchAdvertByIdFulfilled = (state, action) => {
-  return {
-    ...state,
-    activeCamper: action.payload,
-    loading: false,
-  };
-};
-
 //Favorites
 
 export const handleAddFavorite = (state, action) => {

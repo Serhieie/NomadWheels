@@ -1,7 +1,7 @@
 import styles from './Hero.module.scss';
 import sprite from '../../../assets/sprite.svg';
 import heroImg from '../../../assets/images/camperHero.webp';
-import { Button } from '../../CustomItems/Button';
+import { Button } from '../../Button';
 import { Modal } from '../../Modal/Modal';
 import { BookCamperForm } from '../../Modal/BookCamperForm/BookCamperForm';
 import { useDispatch } from 'react-redux';

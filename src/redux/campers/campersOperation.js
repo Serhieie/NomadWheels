@@ -1,12 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import {
-  getAdverts,
-  getAdvertById,
-  apiCall,
-  getFilteredAdverts,
-} from '../../api/axiosInstance';
-import { setFilters } from '../../api/setFilters';
+import { getAdverts, getAdvertsByFilter } from '../../api/axiosInstance';
+import { getFilteredAdverts } from '../../helpers';
 
 export const fetchAdverts = createAsyncThunk(
   'adverts/fetchAdverts',
@@ -32,32 +27,11 @@ export const fetchAdverts = createAsyncThunk(
   }
 );
 
-export const fetchAdvertById = createAsyncThunk(
-  'adverts/fetchAdvertById',
-  async (id, { rejectWithValue }) => {
-    try {
-      const campers = await getAdvertById(id);
-
-      return campers;
-    } catch (error) {
-      if (error.message === 'Not found') {
-        toast.error("Sorry! We didn't find this car", {
-          position: 'bottom-right',
-        });
-      }
-
-      return rejectWithValue(error.message);
-    }
-  }
-);
-
 export const fetchFilteredAdverts = createAsyncThunk(
   'adverts/fetchFilteredAdverts',
   async ({ location, form, details }, { rejectWithValue }) => {
     try {
-      const filters = setFilters({ location, form });
-      const url = `?${filters.toString()}`;
-      const filteredAdverts = await apiCall(url);
+      const filteredAdverts = await getAdvertsByFilter({ location, form });
       const filteredByDetails = getFilteredAdverts(filteredAdverts, details);
       toast.success(`Success we found ${filteredByDetails.length} cars!`, {
         position: 'bottom-right',

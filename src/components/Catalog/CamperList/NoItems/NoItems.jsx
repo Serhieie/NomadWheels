@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import styles from './NoItems.module.scss';
-import { Button } from '../../../CustomItems/Button';
+import { Button } from '../../../Button';
 import { fetchAdverts } from '../../../../redux/campers/campersOperation';
 import { resetFilter } from '../../../../redux/filter/filterSlice';
 

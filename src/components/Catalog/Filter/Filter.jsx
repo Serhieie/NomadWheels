@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { MdFilterAltOff } from 'react-icons/md';
 import styles from './FilterParts.module.scss';
 import { LocationInput } from './Inputs/LocationInput/LocationInput';
-import { Button } from '../../CustomItems/Button';
+import { Button } from '../../Button';
 import { Equipment } from './Equipment/Equipment';
 import { createDetailsList, createTypeList, areFiltersSet } from '../../../helpers';
 import { Type } from './Type/Type';
@@ -52,7 +52,7 @@ export const FilterParts = () => {
         <LocationInput register={register} />
         <Equipment labels={labels} register={register} />
         <Type types={types} register={register} />
-        <Button type="submit" text="Search" />
+        <Button type="submit" text="Search" loader={true} />
       </form>
     </div>
   );

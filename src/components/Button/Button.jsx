@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import styles from './Button.module.scss';
-import { Loader } from '../../Loader/Loader';
+import { Loader } from '../Loader/Loader';
+import { useCampersState } from '../../hooks/useCampersState';
 
 export const Button = ({
   text,
@@ -8,8 +9,9 @@ export const Button = ({
   accent = true,
   handleClick = null,
   type = 'button',
-  loading = false,
+  loader = false,
 }) => {
+  const { loading } = useCampersState();
   return (
     <button
       className={clsx(styles.button, {
@@ -20,7 +22,7 @@ export const Button = ({
       type={type}
       style={{ minWidth: width }}
     >
-      {loading ? <Loader /> : text}
+      {loader && loading ? <Loader /> : text}
     </button>
   );
 };

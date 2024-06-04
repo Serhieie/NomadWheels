@@ -1,0 +1,36 @@
+@use '../../../styles/utils/placeholders';
+@use '../../../styles/utils/functions' as fn;
+@use '../../../styles/utils/mixins' as mx;
+
+.datePickerWrapper {
+  position: relative;
+  z-index: 99;
+}
+
+.customInput {
+  width: 100%;
+  height: 56px;
+  line-height: 1.25;
+  outline: transparent;
+  background-color: fn.get-color('light-secondary');
+  color: fn.get-color('dark-primary');
+  border: none;
+  border-radius: 10px;
+  padding: 0 46px 0px 18px;
+  user-select: none;
+
+  &::placeholder {
+    color: fn.get-color('dark-secondary-opacity');
+  }
+}
+
+.datePickerIcon {
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  transform: translateY(-50%);
+  z-index: 0;
+  fill: transparent;
+  stroke: fn.get-color('dark-primary');
+  cursor: pointer;
+}

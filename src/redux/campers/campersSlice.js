@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAdverts, fetchAdvertById, fetchFilteredAdverts } from './campersOperation';
+import { fetchAdverts, fetchFilteredAdverts } from './campersOperation';
 import { initialState } from './initialState';
 import {
   handlePending,
@@ -36,10 +36,6 @@ export const campersSlice = createSlice({
       .addCase(fetchAdverts.pending, handlePending)
       .addCase(fetchAdverts.fulfilled, handleFetchAdvertsFulfilled)
       .addCase(fetchAdverts.rejected, handleRejected)
-      //getById
-      .addCase(fetchAdvertById.pending, handlePending)
-      .addCase(fetchAdvertById.fulfilled, handleFetchAdvertsFulfilled)
-      .addCase(fetchAdvertById.rejected, handleRejected)
       //getFiltered
       .addCase(fetchFilteredAdverts.pending, handlePending)
       .addCase(fetchFilteredAdverts.fulfilled, handleFetchFilteredAdvertsFulfilled)
