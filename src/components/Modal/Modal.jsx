@@ -32,10 +32,11 @@ export const Modal = ({ children, hero = false }) => {
         <>
           <div className={styles.modalContentWrapper}>
             <ModalHead activeCamper={activeCamper} onClose={onClose} />
-            <ImagesBlock gallery={activeCamper.gallery} />
-            <ModalTabs activeCamper={activeCamper} />
+            <div className={styles.scrolledContent}>
+              <ImagesBlock gallery={activeCamper.gallery} />
+              <ModalTabs activeCamper={activeCamper} />
+            </div>
           </div>
-          <div className={styles.modalSpacer}></div>
         </>
       )}
     </ReactModal>

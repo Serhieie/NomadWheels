@@ -55,7 +55,7 @@
   overflow-y: auto;
 
   box-shadow: 0px 4px 8px -1px fn.get-color('shadow-color');
-  @include mx.scroll-bar('light-primary', 18px);
+  @include mx.scroll-bar('scroll', 'light', 18px);
 }
 
 .noFavoriteItemsWrapper {

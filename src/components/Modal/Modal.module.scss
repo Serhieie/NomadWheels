@@ -8,17 +8,14 @@
   left: 0;
   right: 0;
   bottom: 0px;
-  overflow-y: auto;
   background-color: fn.get-color('overlay');
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 5;
-  padding-bottom: 20px;
 }
 
 .modal {
-  position: absolute;
   top: 10px;
 }
 
@@ -32,17 +29,22 @@
 .modalContentWrapper {
   display: flex;
   flex-direction: column;
+  max-width: 982px;
+  max-height: calc(100dvh - 40px);
   gap: 24px;
   padding: 40px;
+  padding-right: 15px;
   border-radius: 20px;
-  max-width: 982px;
   background-color: fn.get-color('light');
+}
+
+.scrolledContent {
+  overflow: hidden;
+  padding-right: 8px;
+  overflow-y: auto;
+  @include mx.scroll-bar('scroll', 'light', 8);
 }
 
 .camperDescription {
   color: fn.get-color('dark-secondary');
-}
-
-.modalSpacer {
-  height: 10px;
 }

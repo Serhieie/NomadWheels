@@ -16,6 +16,7 @@
   align-items: center;
 
   .closeIcon {
+    margin-right: 20px;
     stroke: fn.get-color('dark-primary');
     cursor: pointer;
     @include mx.ease('fast');

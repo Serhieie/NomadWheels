@@ -22,8 +22,9 @@ export const CardHead = ({ item, icon }) => {
     <div className={styles.cardHead}>
       <div className={styles.topPart}>
         <h2>{item.name}</h2>
-        <span className={styles.price}>&#x20AC;{`${item.price}`}</span>
-        <span
+        <span className={styles.price}>&#x20AC;{`${item.price.toFixed(2)}`}</span>
+        <button
+          type="button"
           onClick={() => handleAddFavorite(item._id)}
           className={`${
             icon === 'close' ? styles.favoriteText : styles.favoriteTextCatalog
@@ -41,7 +42,7 @@ export const CardHead = ({ item, icon }) => {
           >
             <use href={`${sprite}#icon-${icon}`}></use>
           </svg>
-        </span>
+        </button>
       </div>
       <HeadBottom item={item} />
     </div>

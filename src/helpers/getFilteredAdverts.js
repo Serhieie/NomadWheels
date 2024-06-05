@@ -2,13 +2,16 @@ export const getFilteredAdverts = (filteredAdverts, details) => {
   return filteredAdverts.filter((advert) => {
     for (const detail of details) {
       let detailToCompare = detail.toLowerCase();
+
       if (detail === 'TV' || detail === 'CD') {
         detailToCompare = detail;
       } else if (detail === 'AC') {
         detailToCompare = 'airConditioner';
-      }
-      if (detail === 'Automatic') {
-        return advert.transmission === 'automatic';
+      } else if (detail === 'Automatic') {
+        if (advert.transmission !== 'automatic') {
+          return false;
+        }
+        continue;
       }
       if (
         !advert.details ||

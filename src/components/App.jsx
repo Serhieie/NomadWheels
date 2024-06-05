@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import 'normalize.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,7 +16,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/Catalog" element={<CatalogPage />} />
         <Route path="/Favorites" element={<FavoritePage />} />
-        <Route path="*" element={<HomePage />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Route>
     </Routes>
   );

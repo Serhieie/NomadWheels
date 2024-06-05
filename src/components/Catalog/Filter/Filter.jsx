@@ -25,7 +25,9 @@ export const FilterParts = () => {
   });
 
   const onSubmit = (data) => {
-    dispatch(setFilter(data));
+    const { location } = data;
+    const trimmedLocation = location.trim();
+    dispatch(setFilter({ ...data, location: trimmedLocation }));
   };
 
   const handleResetFilter = () => {
